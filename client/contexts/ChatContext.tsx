@@ -247,7 +247,7 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   const sendMessage = async (content: string, projectId?: string) => {
-    if (!activeRoom || !user) return;
+    if (!activeRoom || !user || !authContext) return;
 
     const newMessage: ChatMessage = {
       id: `msg_${Date.now()}`,
