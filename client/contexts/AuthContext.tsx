@@ -229,5 +229,5 @@ export const useAuth = (): AuthContextType => {
   return context;
 };
 
-// Export mock users for development
-export { mockUsers };
+// Export AuthContext and mock users for development
+export { AuthContext, mockUsers };
