@@ -107,7 +107,7 @@ export default function Index() {
               <Zap className="w-3 h-3 mr-1" />
               Partner Digital Terpercaya
             </div>
-            <h1 className="text-xl md:text-3xl font-bold text-gray-800 mb-3 leading-tight">
+            <h1 className="text-xl md:text-3xl font-semibold text-gray-800 mb-3 leading-tight">
               Mewujudkan Ide Digital Anda
               <span className="text-primary block">Menjadi Aplikasi Berkualitas Tinggi</span>
             </h1>
