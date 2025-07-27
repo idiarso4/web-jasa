@@ -136,7 +136,7 @@ export default function Index() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent mb-1">{stat.number}</div>
+                <div className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent mb-1">{stat.number}</div>
                 <div className="text-xs text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
