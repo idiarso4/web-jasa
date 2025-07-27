@@ -229,7 +229,7 @@ export default function Index() {
               <Users className="w-4 h-4 mr-2" />
               Testimoni Klien
             </Badge>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
               Apa Kata Klien Kami
             </h2>
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
