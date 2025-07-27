@@ -247,7 +247,7 @@ export default function Index() {
                   </div>
                   <p className="text-sm text-gray-600 mb-4 italic">"{testimonial.message}"</p>
                   <div>
-                    <div className="font-semibold text-gray-900 text-sm">{testimonial.name}</div>
+                    <div className="font-medium text-gray-900 text-sm">{testimonial.name}</div>
                     <div className="text-xs text-gray-500">{testimonial.company}</div>
                   </div>
                 </CardContent>
