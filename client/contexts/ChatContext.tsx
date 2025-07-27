@@ -182,7 +182,11 @@ const mockMessages: { [roomId: string]: ChatMessage[] } = {
 export const ChatProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const { user, isAuthenticated } = useAuth();
+  // Safely get auth context, handle case where it might not be ready
+  const authContext = useContext(AuthContext);
+  const user = authContext?.user;
+  const isAuthenticated = authContext?.isAuthenticated || false;
+
   const [rooms, setRooms] = useState<ChatRoom[]>([]);
   const [activeRoom, setActiveRoom] = useState<ChatRoom | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
