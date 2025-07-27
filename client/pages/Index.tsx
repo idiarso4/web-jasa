@@ -103,15 +103,15 @@ export default function Index() {
       <section className="relative bg-gradient-to-br from-orange-50 via-red-50 to-primary/10 pt-12 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="mb-6" variant="secondary">
-              <Zap className="w-4 h-4 mr-2" />
+            <div className="inline-flex items-center px-3 py-1 mb-4 text-xs font-medium text-primary bg-primary/10 rounded-full">
+              <Zap className="w-3 h-3 mr-1" />
               Partner Digital Terpercaya
-            </Badge>
-            <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+            </div>
+            <h1 className="text-xl md:text-3xl font-bold text-gray-800 mb-3 leading-tight">
               Mewujudkan Ide Digital Anda
               <span className="text-primary block">Menjadi Aplikasi Berkualitas Tinggi</span>
             </h1>
-            <p className="text-base md:text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+            <p className="text-sm md:text-base text-gray-600 mb-5 max-w-3xl mx-auto leading-relaxed">
               Kami mengembangkan aplikasi mobile dan web yang inovatif, user-friendly, dan sesuai dengan kebutuhan bisnis Anda. 
               Dari konsep hingga peluncuran, kami siap menjadi partner teknologi yang dapat diandalkan.
             </p>
