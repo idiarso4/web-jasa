@@ -260,7 +260,7 @@ export default function Index() {
       {/* CTA Section */}
       <section className="py-24 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">
             Siap Memulai Proyek Digital Anda?
           </h2>
           <p className="text-base text-primary-foreground/80 mb-6 max-w-3xl mx-auto">
