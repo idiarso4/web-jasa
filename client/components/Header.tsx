@@ -39,7 +39,9 @@ export default function Header({ isAuthenticated = false }: HeaderProps) {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">DA</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">DigitalAgensi</span>
+            <span className="text-xl font-bold text-gray-900">
+              DigitalAgensi
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
