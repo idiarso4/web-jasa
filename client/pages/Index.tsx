@@ -50,19 +50,19 @@ export default function Index() {
     {
       title: "E-Commerce Platform",
       description: "Platform jual beli online dengan sistem pembayaran terintegrasi",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/29502353/pexels-photo-29502353.jpeg",
       tags: ["React", "Node.js", "PostgreSQL"]
     },
     {
       title: "Sistem Manajemen Rumah Sakit",
       description: "Aplikasi komprehensif untuk manajemen pasien dan administrasi",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/6823602/pexels-photo-6823602.jpeg",
       tags: ["Vue.js", "Laravel", "MySQL"]
     },
     {
       title: "Aplikasi Delivery Food",
       description: "Aplikasi mobile untuk layanan pengantaran makanan real-time",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/5077068/pexels-photo-5077068.jpeg",
       tags: ["React Native", "Firebase", "Stripe"]
     }
   ];
