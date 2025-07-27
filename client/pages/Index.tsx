@@ -116,13 +116,13 @@ export default function Index() {
               Dari konsep hingga peluncuran, kami siap menjadi partner teknologi yang dapat diandalkan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="default" className="text-sm px-6 py-3" asChild>
+              <Button size="default" className="text-sm px-6 py-2.5 bg-gradient-to-r from-primary to-orange-500 hover:from-primary/90 hover:to-orange-500/90 shadow-lg" asChild>
                 <Link to="/kontak">
                   Konsultasi Gratis Sekarang
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="default" variant="outline" className="text-sm px-6 py-3" asChild>
+              <Button size="default" variant="outline" className="text-sm px-6 py-2.5 border-primary text-primary hover:bg-primary hover:text-white" asChild>
                 <Link to="/portofolio">Lihat Proyek Kami</Link>
               </Button>
             </div>
