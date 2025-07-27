@@ -183,7 +183,7 @@ export default function Index() {
               <Trophy className="w-4 h-4 mr-2" />
               Portofolio Unggulan
             </Badge>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
               Proyek-Proyek Terbaik Kami
             </h2>
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
