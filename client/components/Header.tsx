@@ -48,7 +48,7 @@ export default function Header({ isAuthenticated = false }: HeaderProps) {
               <Link
                 key={item.href}
                 to={item.href}
-                className="text-gray-600 hover:text-primary transition-colors duration-200 font-medium"
+                className="text-gray-600 hover:text-primary transition-colors duration-200 font-normal"
               >
                 {item.label}
               </Link>
