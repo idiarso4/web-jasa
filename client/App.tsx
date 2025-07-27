@@ -45,12 +45,43 @@ const App = () => (
           <Route path="/login" element={<Login />} />
 
           {/* Client Portal Routes */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/proyek" element={<Proyek />} />
-          <Route path="/komunikasi" element={<Komunikasi />} />
-          <Route path="/dokumen" element={<Dokumen />} />
-          <Route path="/tagihan" element={<Tagihan />} />
-          <Route path="/akun" element={<Akun />} />
+          <Route path="/dashboard" element={
+            <ProtectedRoute requiredRole="client">
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/proyek" element={
+            <ProtectedRoute requiredRole="client">
+              <Proyek />
+            </ProtectedRoute>
+          } />
+          <Route path="/komunikasi" element={
+            <ProtectedRoute requiredRole="client">
+              <Komunikasi />
+            </ProtectedRoute>
+          } />
+          <Route path="/dokumen" element={
+            <ProtectedRoute requiredRole="client">
+              <Dokumen />
+            </ProtectedRoute>
+          } />
+          <Route path="/tagihan" element={
+            <ProtectedRoute requiredRole="client">
+              <Tagihan />
+            </ProtectedRoute>
+          } />
+          <Route path="/akun" element={
+            <ProtectedRoute>
+              <Akun />
+            </ProtectedRoute>
+          } />
+
+          {/* Admin Routes */}
+          <Route path="/admin" element={
+            <ProtectedRoute requiredRole="admin">
+              <Admin />
+            </ProtectedRoute>
+          } />
 
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
