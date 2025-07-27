@@ -289,7 +289,7 @@ export default function Index() {
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">DA</span>
                 </div>
-                <span className="text-xl font-bold">DigitalAgensi</span>
+                <span className="text-xl font-semibold">DigitalAgensi</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Partner digital terpercaya untuk mengembangkan aplikasi mobile dan web berkualitas tinggi 
