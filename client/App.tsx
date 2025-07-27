@@ -32,63 +32,84 @@ const App = () => (
     <AuthProvider>
       <ChatProvider>
         <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
 
-          {/* Public Website Routes */}
-          <Route path="/layanan" element={<Layanan />} />
-          <Route path="/portofolio" element={<Portofolio />} />
-          <Route path="/proses" element={<Proses />} />
-          <Route path="/tentang" element={<Tentang />} />
-          <Route path="/kontak" element={<Kontak />} />
-          <Route path="/login" element={<Login />} />
+              {/* Public Website Routes */}
+              <Route path="/layanan" element={<Layanan />} />
+              <Route path="/portofolio" element={<Portofolio />} />
+              <Route path="/proses" element={<Proses />} />
+              <Route path="/tentang" element={<Tentang />} />
+              <Route path="/kontak" element={<Kontak />} />
+              <Route path="/login" element={<Login />} />
 
-          {/* Client Portal Routes */}
-          <Route path="/dashboard" element={
-            <ProtectedRoute requiredRole="client">
-              <Dashboard />
-            </ProtectedRoute>
-          } />
-          <Route path="/proyek" element={
-            <ProtectedRoute requiredRole="client">
-              <Proyek />
-            </ProtectedRoute>
-          } />
-          <Route path="/komunikasi" element={
-            <ProtectedRoute requiredRole="client">
-              <Komunikasi />
-            </ProtectedRoute>
-          } />
-          <Route path="/dokumen" element={
-            <ProtectedRoute requiredRole="client">
-              <Dokumen />
-            </ProtectedRoute>
-          } />
-          <Route path="/tagihan" element={
-            <ProtectedRoute requiredRole="client">
-              <Tagihan />
-            </ProtectedRoute>
-          } />
-          <Route path="/akun" element={
-            <ProtectedRoute>
-              <Akun />
-            </ProtectedRoute>
-          } />
+              {/* Client Portal Routes */}
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute requiredRole="client">
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/proyek"
+                element={
+                  <ProtectedRoute requiredRole="client">
+                    <Proyek />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/komunikasi"
+                element={
+                  <ProtectedRoute requiredRole="client">
+                    <Komunikasi />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/dokumen"
+                element={
+                  <ProtectedRoute requiredRole="client">
+                    <Dokumen />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/tagihan"
+                element={
+                  <ProtectedRoute requiredRole="client">
+                    <Tagihan />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/akun"
+                element={
+                  <ProtectedRoute>
+                    <Akun />
+                  </ProtectedRoute>
+                }
+              />
 
-          {/* Admin Routes */}
-          <Route path="/admin" element={
-            <ProtectedRoute requiredRole="admin">
-              <Admin />
-            </ProtectedRoute>
-          } />
+              {/* Admin Routes */}
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <Admin />
+                  </ProtectedRoute>
+                }
+              />
 
-          {/* Catch-all route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        </BrowserRouter>
+              {/* Catch-all route */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
         </TooltipProvider>
       </ChatProvider>
     </AuthProvider>

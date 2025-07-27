@@ -9,10 +9,10 @@ interface ProtectedRouteProps {
   requireAuth?: boolean;
 }
 
-export default function ProtectedRoute({ 
-  children, 
-  requiredRole, 
-  requireAuth = true 
+export default function ProtectedRoute({
+  children,
+  requiredRole,
+  requireAuth = true,
 }: ProtectedRouteProps) {
   const { user, loading, isAuthenticated } = useAuth();
 
@@ -36,9 +36,9 @@ export default function ProtectedRoute({
   // Check role-based access
   if (requiredRole && user?.role !== requiredRole) {
     // Redirect based on user role
-    if (user?.role === 'admin') {
+    if (user?.role === "admin") {
       return <Navigate to="/admin" replace />;
-    } else if (user?.role === 'client') {
+    } else if (user?.role === "client") {
       return <Navigate to="/dashboard" replace />;
     } else {
       return <Navigate to="/login" replace />;

@@ -1,6 +1,12 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { ChatMessage, ChatRoom } from '@shared/auth';
-import { useAuth } from './AuthContext';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
+import { ChatMessage, ChatRoom } from "@shared/auth";
+import { useAuth } from "./AuthContext";
 
 interface ChatContextType {
   rooms: ChatRoom[];
@@ -10,7 +16,11 @@ interface ChatContextType {
   setActiveRoom: (room: ChatRoom | null) => void;
   sendMessage: (content: string, projectId?: string) => Promise<void>;
   markAsRead: (messageId: string) => void;
-  createRoom: (participantIds: string[], name: string, projectId?: string) => Promise<ChatRoom>;
+  createRoom: (
+    participantIds: string[],
+    name: string,
+    projectId?: string,
+  ) => Promise<ChatRoom>;
 }
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
@@ -27,7 +37,7 @@ const mockRooms: ChatRoom[] = [
         name: "Admin DigitalAgensi",
         role: "admin",
         company: "DigitalAgensi",
-        createdAt: "2024-01-01T00:00:00Z"
+        createdAt: "2024-01-01T00:00:00Z",
       },
       {
         id: "2",
@@ -35,8 +45,8 @@ const mockRooms: ChatRoom[] = [
         name: "Budi Santoso",
         role: "client",
         company: "PT. Fashion Digital",
-        createdAt: "2024-01-15T00:00:00Z"
-      }
+        createdAt: "2024-01-15T00:00:00Z",
+      },
     ],
     lastMessage: {
       id: "msg_1",
@@ -46,11 +56,11 @@ const mockRooms: ChatRoom[] = [
       content: "Kapan bisa review prototype yang baru?",
       timestamp: new Date(Date.now() - 5 * 60 * 1000).toISOString(),
       projectId: "project_1",
-      isRead: false
+      isRead: false,
     },
     unreadCount: 2,
     projectId: "project_1",
-    createdAt: "2024-01-15T00:00:00Z"
+    createdAt: "2024-01-15T00:00:00Z",
   },
   {
     id: "room_2",
@@ -62,7 +72,7 @@ const mockRooms: ChatRoom[] = [
         name: "Admin DigitalAgensi",
         role: "admin",
         company: "DigitalAgensi",
-        createdAt: "2024-01-01T00:00:00Z"
+        createdAt: "2024-01-01T00:00:00Z",
       },
       {
         id: "3",
@@ -70,8 +80,8 @@ const mockRooms: ChatRoom[] = [
         name: "Dr. Sari Indah",
         role: "client",
         company: "RS. Mitra Sehat",
-        createdAt: "2024-02-01T00:00:00Z"
-      }
+        createdAt: "2024-02-01T00:00:00Z",
+      },
     ],
     lastMessage: {
       id: "msg_2",
@@ -81,12 +91,12 @@ const mockRooms: ChatRoom[] = [
       content: "Ada bug di modul appointment booking",
       timestamp: new Date(Date.now() - 60 * 60 * 1000).toISOString(),
       projectId: "project_2",
-      isRead: true
+      isRead: true,
     },
     unreadCount: 1,
     projectId: "project_2",
-    createdAt: "2024-02-01T00:00:00Z"
-  }
+    createdAt: "2024-02-01T00:00:00Z",
+  },
 ];
 
 const mockMessages: { [roomId: string]: ChatMessage[] } = {
@@ -99,38 +109,40 @@ const mockMessages: { [roomId: string]: ChatMessage[] } = {
       content: "Halo Pak Budi! Bagaimana kabar proyek e-commerce nya?",
       timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
       projectId: "project_1",
-      isRead: true
+      isRead: true,
     },
     {
       id: "msg_1_2",
       senderId: "2",
-      senderName: "Budi Santoso", 
+      senderName: "Budi Santoso",
       senderRole: "client",
-      content: "Halo! Baik sekali. Tim sudah menyelesaikan fitur shopping cart kemarin.",
+      content:
+        "Halo! Baik sekali. Tim sudah menyelesaikan fitur shopping cart kemarin.",
       timestamp: new Date(Date.now() - 90 * 60 * 1000).toISOString(),
       projectId: "project_1",
-      isRead: true
+      isRead: true,
     },
     {
       id: "msg_1_3",
       senderId: "1",
       senderName: "Admin DigitalAgensi",
       senderRole: "admin",
-      content: "Bagus! Kami juga sudah selesai dengan payment gateway integration. Prototype baru sudah ready untuk review.",
+      content:
+        "Bagus! Kami juga sudah selesai dengan payment gateway integration. Prototype baru sudah ready untuk review.",
       timestamp: new Date(Date.now() - 60 * 60 * 1000).toISOString(),
       projectId: "project_1",
-      isRead: true
+      isRead: true,
     },
     {
       id: "msg_1_4",
       senderId: "2",
       senderName: "Budi Santoso",
-      senderRole: "client", 
+      senderRole: "client",
       content: "Kapan bisa review prototype yang baru?",
       timestamp: new Date(Date.now() - 5 * 60 * 1000).toISOString(),
       projectId: "project_1",
-      isRead: false
-    }
+      isRead: false,
+    },
   ],
   room_2: [
     {
@@ -141,7 +153,7 @@ const mockMessages: { [roomId: string]: ChatMessage[] } = {
       content: "Selamat pagi tim! Saya menemukan issue di sistem appointment.",
       timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
       projectId: "project_2",
-      isRead: true
+      isRead: true,
     },
     {
       id: "msg_2_2",
@@ -151,22 +163,25 @@ const mockMessages: { [roomId: string]: ChatMessage[] } = {
       content: "Pagi Dok! Bisa dijelaskan lebih detail issue nya?",
       timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
       projectId: "project_2",
-      isRead: true
+      isRead: true,
     },
     {
       id: "msg_2_3",
       senderId: "3",
       senderName: "Dr. Sari Indah",
       senderRole: "client",
-      content: "Ada bug di modul appointment booking, patient tidak bisa pilih jadwal dokter tertentu.",
+      content:
+        "Ada bug di modul appointment booking, patient tidak bisa pilih jadwal dokter tertentu.",
       timestamp: new Date(Date.now() - 60 * 60 * 1000).toISOString(),
       projectId: "project_2",
-      isRead: false
-    }
-  ]
+      isRead: false,
+    },
+  ],
 };
 
-export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ChatProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const { user, isAuthenticated } = useAuth();
   const [rooms, setRooms] = useState<ChatRoom[]>([]);
   const [activeRoom, setActiveRoom] = useState<ChatRoom | null>(null);
@@ -197,16 +212,16 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setLoading(true);
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       // Filter rooms based on user role
-      const userRooms = mockRooms.filter(room => 
-        room.participants.some(p => p.id === user?.id)
+      const userRooms = mockRooms.filter((room) =>
+        room.participants.some((p) => p.id === user?.id),
       );
-      
+
       setRooms(userRooms);
     } catch (error) {
-      console.error('Error loading chat rooms:', error);
+      console.error("Error loading chat rooms:", error);
     } finally {
       setLoading(false);
     }
@@ -216,12 +231,12 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setLoading(true);
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 300));
-      
+      await new Promise((resolve) => setTimeout(resolve, 300));
+
       const roomMessages = mockMessages[roomId] || [];
       setMessages(roomMessages);
     } catch (error) {
-      console.error('Error loading messages:', error);
+      console.error("Error loading messages:", error);
     } finally {
       setLoading(false);
     }
@@ -238,60 +253,67 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       content,
       timestamp: new Date().toISOString(),
       projectId,
-      isRead: false
+      isRead: false,
     };
 
     try {
       // Optimistically update UI
-      setMessages(prev => [...prev, newMessage]);
-      
+      setMessages((prev) => [...prev, newMessage]);
+
       // Update room's last message
-      setRooms(prev => prev.map(room => 
-        room.id === activeRoom.id 
-          ? { ...room, lastMessage: newMessage }
-          : room
-      ));
+      setRooms((prev) =>
+        prev.map((room) =>
+          room.id === activeRoom.id
+            ? { ...room, lastMessage: newMessage }
+            : room,
+        ),
+      );
 
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       // In real app, this would be handled by backend
       if (!mockMessages[activeRoom.id]) {
         mockMessages[activeRoom.id] = [];
       }
       mockMessages[activeRoom.id].push(newMessage);
-      
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error("Error sending message:", error);
       // Revert optimistic update
-      setMessages(prev => prev.filter(msg => msg.id !== newMessage.id));
+      setMessages((prev) => prev.filter((msg) => msg.id !== newMessage.id));
     }
   };
 
   const markAsRead = (messageId: string) => {
-    setMessages(prev => prev.map(msg => 
-      msg.id === messageId ? { ...msg, isRead: true } : msg
-    ));
+    setMessages((prev) =>
+      prev.map((msg) =>
+        msg.id === messageId ? { ...msg, isRead: true } : msg,
+      ),
+    );
   };
 
-  const createRoom = async (participantIds: string[], name: string, projectId?: string): Promise<ChatRoom> => {
+  const createRoom = async (
+    participantIds: string[],
+    name: string,
+    projectId?: string,
+  ): Promise<ChatRoom> => {
     const newRoom: ChatRoom = {
       id: `room_${Date.now()}`,
       name,
       participants: [], // Would be populated by backend
       unreadCount: 0,
       projectId,
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
     };
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      setRooms(prev => [...prev, newRoom]);
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      setRooms((prev) => [...prev, newRoom]);
       return newRoom;
     } catch (error) {
-      console.error('Error creating room:', error);
+      console.error("Error creating room:", error);
       throw error;
     }
   };
@@ -304,20 +326,16 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setActiveRoom,
     sendMessage,
     markAsRead,
-    createRoom
+    createRoom,
   };
 
-  return (
-    <ChatContext.Provider value={value}>
-      {children}
-    </ChatContext.Provider>
-  );
+  return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
 };
 
 export const useChat = (): ChatContextType => {
   const context = useContext(ChatContext);
   if (context === undefined) {
-    throw new Error('useChat must be used within a ChatProvider');
+    throw new Error("useChat must be used within a ChatProvider");
   }
   return context;
 };

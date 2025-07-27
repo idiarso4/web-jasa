@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { 
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -58,7 +58,11 @@ export default function Header() {
   };
 
   const getUserInitials = (name: string) => {
-    return name.split(' ').map(n => n[0]).join('').toUpperCase();
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase();
   };
 
   return (
@@ -70,7 +74,9 @@ export default function Header() {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-semibold text-sm">DA</span>
             </div>
-            <span className="text-xl font-semibold text-gray-900">DigitalAgensi</span>
+            <span className="text-xl font-semibold text-gray-900">
+              DigitalAgensi
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -105,7 +111,10 @@ export default function Header() {
                 {/* User Menu */}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                    <Button
+                      variant="ghost"
+                      className="relative h-8 w-8 rounded-full"
+                    >
                       <Avatar className="h-8 w-8">
                         <AvatarImage src={user.avatar} alt={user.name} />
                         <AvatarFallback className="text-xs bg-primary text-white">
@@ -117,12 +126,14 @@ export default function Header() {
                   <DropdownMenuContent className="w-56" align="end" forceMount>
                     <DropdownMenuLabel className="font-normal">
                       <div className="flex flex-col space-y-1">
-                        <p className="text-sm font-medium leading-none">{user.name}</p>
+                        <p className="text-sm font-medium leading-none">
+                          {user.name}
+                        </p>
                         <p className="text-xs leading-none text-muted-foreground">
                           {user.email}
                         </p>
                         <p className="text-xs leading-none text-primary font-medium">
-                          {user.role === 'admin' ? 'Admin' : 'Client'}
+                          {user.role === "admin" ? "Admin" : "Client"}
                           {user.company && ` - ${user.company}`}
                         </p>
                       </div>
@@ -135,13 +146,19 @@ export default function Header() {
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link to={isAdmin ? "/admin/settings" : "/settings"} className="cursor-pointer">
+                      <Link
+                        to={isAdmin ? "/admin/settings" : "/settings"}
+                        className="cursor-pointer"
+                      >
                         <Settings className="mr-2 h-4 w-4" />
                         <span>Pengaturan</span>
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
+                    <DropdownMenuItem
+                      onClick={handleLogout}
+                      className="cursor-pointer"
+                    >
                       <LogOut className="mr-2 h-4 w-4" />
                       <span>Keluar</span>
                     </DropdownMenuItem>
@@ -182,7 +199,7 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              
+
               {!isAuthenticated && (
                 <Link
                   to="/login"
@@ -192,24 +209,26 @@ export default function Header() {
                   <Button className="w-full text-sm">Login</Button>
                 </Link>
               )}
-              
+
               {isAuthenticated && (
                 <div className="mx-4 mt-2 pt-2 border-t">
                   <div className="flex items-center space-x-3 mb-3">
                     <Avatar className="h-8 w-8">
                       <AvatarImage src={user?.avatar} alt={user?.name} />
                       <AvatarFallback className="text-xs bg-primary text-white">
-                        {user ? getUserInitials(user.name) : 'U'}
+                        {user ? getUserInitials(user.name) : "U"}
                       </AvatarFallback>
                     </Avatar>
                     <div>
                       <p className="text-sm font-medium">{user?.name}</p>
-                      <p className="text-xs text-gray-500">{user?.role === 'admin' ? 'Admin' : 'Client'}</p>
+                      <p className="text-xs text-gray-500">
+                        {user?.role === "admin" ? "Admin" : "Client"}
+                      </p>
                     </div>
                   </div>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <Button
+                    variant="outline"
+                    size="sm"
                     className="w-full text-sm"
                     onClick={handleLogout}
                   >

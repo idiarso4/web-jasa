@@ -21,7 +21,7 @@ export default {
           "Roboto",
           '"Helvetica Neue"',
           "Arial",
-          "sans-serif"
+          "sans-serif",
         ],
       },
       colors: {

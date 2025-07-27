@@ -1,5 +1,5 @@
 // User roles
-export type UserRole = 'admin' | 'client';
+export type UserRole = "admin" | "client";
 
 // User interface
 export interface User {
@@ -66,7 +66,7 @@ export interface Project {
   name: string;
   description: string;
   clientId: string;
-  status: 'planning' | 'development' | 'testing' | 'completed';
+  status: "planning" | "development" | "testing" | "completed";
   progress: number;
   startDate: string;
   endDate?: string;
