@@ -145,14 +145,14 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-4" variant="secondary">Layanan Kami</Badge>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-3 py-1 mb-3 text-xs font-medium text-primary bg-primary/10 rounded-full">Layanan Kami</div>
+            <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
               Solusi Digital Komprehensif
             </h2>
-            <p className="text-base text-gray-600 max-w-3xl mx-auto">
+            <p className="text-sm text-gray-600 max-w-3xl mx-auto">
               Kami menyediakan layanan pengembangan aplikasi end-to-end dengan teknologi terkini 
               dan metodologi yang terbukti efektif.
             </p>
