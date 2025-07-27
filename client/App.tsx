@@ -21,6 +21,8 @@ import Komunikasi from "./pages/Komunikasi";
 import Dokumen from "./pages/Dokumen";
 import Tagihan from "./pages/Tagihan";
 import Akun from "./pages/Akun";
+import Admin from "./pages/Admin";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
