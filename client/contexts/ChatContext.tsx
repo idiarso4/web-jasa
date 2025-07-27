@@ -194,14 +194,14 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({
 
   // Load chat rooms when user authenticates
   useEffect(() => {
-    if (isAuthenticated && user) {
+    if (authContext && isAuthenticated && user) {
       loadChatRooms();
     } else {
       setRooms([]);
       setActiveRoom(null);
       setMessages([]);
     }
-  }, [isAuthenticated, user]);
+  }, [authContext, isAuthenticated, user]);
 
   // Load messages when active room changes
   useEffect(() => {
