@@ -6,7 +6,7 @@ import React, {
   ReactNode,
 } from "react";
 import { ChatMessage, ChatRoom } from "@shared/auth";
-import { useAuth } from "./AuthContext";
+import { AuthContext } from "./AuthContext";
 
 interface ChatContextType {
   rooms: ChatRoom[];
